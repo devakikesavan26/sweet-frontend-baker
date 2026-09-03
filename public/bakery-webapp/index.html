@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sugar &amp; Crumb Bakery — Freshly Baked Cakes, Pastries &amp; Treats</title>
+<meta name="description" content="Order freshly baked cakes, cupcakes, cookies, breads, donuts and desserts online from Sugar & Crumb Bakery. Handmade daily with premium ingredients." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header class="nav" id="nav">
+  <div class="container nav__inner">
+    <a href="#home" class="logo" aria-label="Sugar and Crumb home">
+      <span class="logo__mark">🧁</span>
+      <span class="logo__text">Sugar <em>&amp;</em> Crumb</span>
+    </a>
+
+    <nav class="nav__links" id="navLinks" aria-label="Main">
+      <a href="#home">Home</a>
+      <a href="#menu">Menu</a>
+      <a href="#categories">Categories</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="nav__actions">
+      <button class="icon-btn" id="searchToggle" aria-label="Search products">🔍</button>
+      <button class="icon-btn" id="favToggle" aria-label="View favorites">🤍<span class="badge" id="favCount">0</span></button>
+      <button class="icon-btn" id="cartToggle" aria-label="View cart">🛒<span class="badge" id="cartCount">0</span></button>
+      <button class="icon-btn hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">☰</button>
+    </div>
+  </div>
+</header>
+
+<main>
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="container hero__inner">
+    <div class="hero__copy">
+      <span class="pill">🍞 Baked fresh every morning at 5 AM</span>
+      <h1>Freshly Baked,<br /><em>Made With Love</em></h1>
+      <p>Delicious cakes, pastries and treats freshly baked for every special moment — handcrafted in small batches with real butter, real cream and zero shortcuts.</p>
+      <div class="hero__btns">
+        <button class="btn btn--primary" id="orderNowBtn">Order Now</button>
+        <a class="btn btn--ghost" href="#menu">Explore Menu</a>
+      </div>
+      <ul class="hero__stats">
+        <li><strong>28+</strong><span>Daily bakes</span></li>
+        <li><strong>4.9★</strong><span>Customer rating</span></li>
+        <li><strong>60 min</strong><span>Express delivery</span></li>
+      </ul>
+    </div>
+    <div class="hero__art">
+      <img class="hero__img" data-fallback="🎂" src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=900&q=80" alt="Layered chocolate cake decorated with berries" />
+      <div class="hero__chip hero__chip--1">🥐 Butter Croissant<span>₹100</span></div>
+      <div class="hero__chip hero__chip--2">🍩 Choco Donut<span>₹90</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- SEARCH -->
+<section class="searchbar" id="searchSection">
+  <div class="container">
+    <div class="searchbar__box">
+      <span aria-hidden="true">🔍</span>
+      <input type="search" id="searchInput" placeholder="Search cakes, cookies, donuts…" aria-label="Search products" />
+      <button class="btn btn--sm" id="clearSearch" type="button">Clear</button>
+    </div>
+  </div>
+</section>
+
+<!-- CATEGORIES -->
+<section class="section" id="categories">
+  <div class="container">
+    <header class="section__head">
+      <p class="eyebrow">Categories</p>
+      <h2>Pick your craving</h2>
+    </header>
+    <div class="chips" id="categoryChips" role="tablist"></div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="section section--soft" id="menu">
+  <div class="container">
+    <header class="section__head">
+      <p class="eyebrow">Our Menu</p>
+      <h2>Today's bakery counter</h2>
+      <p class="section__sub" id="resultCount"></p>
+    </header>
+    <div class="grid" id="productGrid"></div>
+    <p class="empty" id="emptyState" hidden>😔 No products found. Try another search or category.</p>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section" id="about">
+  <div class="container about">
+    <div class="about__art">
+      <img data-fallback="🥖" src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=900&q=80" alt="Freshly baked breads on a wooden bakery counter" />
+    </div>
+    <div class="about__copy">
+      <p class="eyebrow">Our Story</p>
+      <h2>A neighbourhood bakery since 2011</h2>
+      <p>Sugar &amp; Crumb began as a two-oven kitchen run by a mother-and-daughter duo. Today we bake over a hundred trays a day, yet every loaf is still shaped by hand and every cake is still frosted to order.</p>
+      <ul class="ticks">
+        <li>🌾 Fresh ingredients sourced from local farms</li>
+        <li>👩‍🍳 100% handmade, small-batch production</li>
+        <li>🏅 Quality promise — baked today or it's on us</li>
+        <li>🎂 Custom cakes for birthdays and weddings</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE US -->
+<section class="section section--soft">
+  <div class="container">
+    <header class="section__head">
+      <p class="eyebrow">Why Choose Us</p>
+      <h2>Baked better, every single day</h2>
+    </header>
+    <div class="features">
+      <article class="feature"><span>🍰</span><h3>Freshly Baked</h3><p>Everything leaves the oven the same morning it reaches you.</p></article>
+      <article class="feature"><span>🧈</span><h3>Premium Ingredients</h3><p>Belgian chocolate, French butter, farm eggs. No substitutes.</p></article>
+      <article class="feature"><span>🎨</span><h3>Custom Cakes</h3><p>Tell us the theme, we'll design and pipe it by hand.</p></article>
+      <article class="feature"><span>🚴</span><h3>Fast Delivery</h3><p>Express delivery within 60 minutes across the city.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section">
+  <div class="container">
+    <header class="section__head">
+      <p class="eyebrow">Testimonials</p>
+      <h2>Loved by 12,000+ sweet tooths</h2>
+    </header>
+    <div class="testimonials" id="testimonials"></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section section--soft" id="contact">
+  <div class="container contact">
+    <div class="contact__info">
+      <p class="eyebrow">Contact</p>
+      <h2>Come say hello</h2>
+      <ul class="infolist">
+        <li><span>📍</span><div><strong>Address</strong><p>42 Baker Street, Anna Nagar, Chennai 600040</p></div></li>
+        <li><span>📞</span><div><strong>Phone</strong><p>+91 98400 12345</p></div></li>
+        <li><span>✉️</span><div><strong>Email</strong><p>hello@sugarandcrumb.in</p></div></li>
+        <li><span>🕗</span><div><strong>Opening hours</strong><p>Mon–Sat: 7:00 AM – 10:00 PM<br />Sunday: 8:00 AM – 6:00 PM</p></div></li>
+      </ul>
+    </div>
+    <form class="card form" id="contactForm" novalidate>
+      <h3>Send us a message</h3>
+      <label>Your name<input type="text" name="name" id="cName" /><small class="err" id="cNameErr"></small></label>
+      <label>Email<input type="email" name="email" id="cEmail" /><small class="err" id="cEmailErr"></small></label>
+      <label>Message<textarea name="message" id="cMessage" rows="4"></textarea><small class="err" id="cMessageErr"></small></label>
+      <button class="btn btn--primary" type="submit">Send Message</button>
+      <p class="success" id="contactSuccess" hidden>✅ Thanks! Your message has been sent. We'll reply within 24 hours.</p>
+    </form>
+  </div>
+</section>
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container footer__grid">
+    <div>
+      <a href="#home" class="logo logo--light"><span class="logo__mark">🧁</span><span class="logo__text">Sugar <em>&amp;</em> Crumb</span></a>
+      <p class="footer__about">Handcrafted cakes, breads and desserts baked fresh in Chennai since 2011.</p>
+      <div class="socials">
+        <a href="#contact" aria-label="Instagram">📷</a>
+        <a href="#contact" aria-label="Facebook">👍</a>
+        <a href="#contact" aria-label="X">🐦</a>
+        <a href="#contact" aria-label="WhatsApp">💬</a>
+      </div>
+    </div>
+    <div>
+      <h4>Quick links</h4>
+      <ul><li><a href="#home">Home</a></li><li><a href="#menu">Menu</a></li><li><a href="#about">About</a></li><li><a href="#contact">Contact</a></li></ul>
+    </div>
+    <div>
+      <h4>Categories</h4>
+      <ul id="footerCats"></ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul>
+        <li>42 Baker Street, Chennai</li>
+        <li>+91 98400 12345</li>
+        <li>hello@sugarandcrumb.in</li>
+        <li>Mon–Sat 7AM–10PM</li>
+      </ul>
+    </div>
+  </div>
+  <p class="footer__copy">© <span id="year"></span> Sugar &amp; Crumb Bakery. All rights reserved.</p>
+</footer>
+
+<!-- PRODUCT MODAL -->
+<div class="overlay" id="detailsOverlay" hidden>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="dName">
+    <button class="close" data-close-details aria-label="Close">✕</button>
+    <div class="modal__body" id="detailsBody"></div>
+  </div>
+</div>
+
+<!-- CART DRAWER -->
+<div class="overlay" id="cartOverlay" hidden>
+  <aside class="drawer" role="dialog" aria-modal="true" aria-label="Shopping cart">
+    <header class="drawer__head">
+      <h3>Your Cart 🛒</h3>
+      <button class="close" data-close-cart aria-label="Close cart">✕</button>
+    </header>
+    <div class="drawer__body" id="cartItems"></div>
+    <footer class="drawer__foot">
+      <div class="row"><span>Subtotal</span><strong id="cartSubtotal">₹0</strong></div>
+      <div class="row"><span>Delivery</span><strong id="cartDelivery">₹0</strong></div>
+      <div class="row row--total"><span>Total</span><strong id="cartTotal">₹0</strong></div>
+      <div class="drawer__btns">
+        <button class="btn btn--ghost" id="clearCartBtn">Clear Cart</button>
+        <button class="btn btn--primary" id="checkoutBtn">Checkout</button>
+      </div>
+    </footer>
+  </aside>
+</div>
+
+<!-- FAVORITES DRAWER -->
+<div class="overlay" id="favOverlay" hidden>
+  <aside class="drawer" role="dialog" aria-modal="true" aria-label="Favorites">
+    <header class="drawer__head">
+      <h3>Favorites ❤️</h3>
+      <button class="close" data-close-fav aria-label="Close favorites">✕</button>
+    </header>
+    <div class="drawer__body" id="favItems"></div>
+  </aside>
+</div>
+
+<!-- CHECKOUT MODAL -->
+<div class="overlay" id="checkoutOverlay" hidden>
+  <div class="modal modal--form" role="dialog" aria-modal="true" aria-label="Checkout">
+    <button class="close" data-close-checkout aria-label="Close">✕</button>
+    <div id="checkoutView">
+      <h3>Checkout</h3>
+      <p class="muted">Pay on delivery or online — this is a demo store, no real payment is taken.</p>
+      <form class="form form--grid" id="checkoutForm" novalidate>
+        <label>Full Name<input id="fName" type="text" /><small class="err" id="fNameErr"></small></label>
+        <label>Phone Number<input id="fPhone" type="tel" inputmode="numeric" maxlength="10" /><small class="err" id="fPhoneErr"></small></label>
+        <label>Email<input id="fEmail" type="email" /><small class="err" id="fEmailErr"></small></label>
+        <label>City<input id="fCity" type="text" /><small class="err" id="fCityErr"></small></label>
+        <label class="span2">Address<textarea id="fAddress" rows="2"></textarea><small class="err" id="fAddressErr"></small></label>
+        <label>Pincode<input id="fPin" type="text" inputmode="numeric" maxlength="6" /><small class="err" id="fPinErr"></small></label>
+        <label>Payment Method
+          <select id="fPay">
+            <option value="">Select…</option>
+            <option>Cash on Delivery</option>
+            <option>UPI</option>
+            <option>Card</option>
+          </select>
+          <small class="err" id="fPayErr"></small>
+        </label>
+        <div class="span2 checkout__total"><span>Amount payable</span><strong id="checkoutTotal">₹0</strong></div>
+        <button class="btn btn--primary span2" type="submit">Place Order</button>
+      </form>
+    </div>
+    <div id="successView" hidden class="successview">
+      <div class="successview__icon">🎉</div>
+      <h3>Order placed successfully!</h3>
+      <p class="muted">Thank you for your order. Your treats are heading to the oven.</p>
+      <p class="orderid">Order ID: <strong id="orderId"></strong></p>
+      <button class="btn btn--primary" data-close-checkout>Continue Shopping</button>
+    </div>
+  </div>
+</div>
+
+<div class="toasts" id="toasts" aria-live="polite"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
